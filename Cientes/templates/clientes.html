@@ -1,0 +1,41 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<body>
+    <div class="page-header">
+    <a href="{% url 'newcliente' %}" class="top-menu">Nuevo<span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+
+<table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>NOMBRE</th>
+            <th>NIT</th>
+            <th>EMAIL</th>
+            <th>TELEFONO</th>
+            <th>PATENTE</th>
+            <th>Tipo de Cliente</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{cliente.ID_CLIENTE}}</td>
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.nit}}</td>
+                <td>{{cliente.email}}</td>
+                <td>{{cliente.telefono}}</td>
+                <td><img src="{{ cliente.patente.url}}"></td>
+                <td>{{cliente.TIPO_ID}} || {{cliente.fecha_inicio}} || {{cliente.fecha_fin}} </td>
+                <td>
+                    <a  href="{{cliente.ID_CLIENTE}}/updatecl" class="btn btn-warning">Editar</a>
+                    <a  href="{{cliente.ID_CLIENTE}}/deletecl" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+{% endblock %}

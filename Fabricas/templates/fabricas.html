@@ -1,0 +1,37 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+<body>
+    <div class="page-header">
+    <a href="{% url 'newfabrica' %}" class="top-menu">Nuevo<span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+
+<table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>IP</th>
+            <th>PUERTO</th>
+            <th>NOMBRE</th>
+            <th>PASSWORD</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{cliente.ID}}</td>
+                <td>{{cliente.IP}}</td>
+                <td>{{cliente.Puerto}}</td>
+                <td>{{cliente.Nombre}}</td>
+                <td>{{cliente.Password}}</td>
+                <td>
+                    <a  href="{{cliente.id}}/updatecl" class="btn btn-warning">Editar</a>
+                    <a  href="{{cliente.id}}/deletecl" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+{% endblock %}

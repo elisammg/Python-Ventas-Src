@@ -1,0 +1,43 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<body>
+    <div class="page-header">
+    <a href="{% url 'newcliente' %}" class="top-menu">Nuevo<span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+
+<table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>NOMBRE</th>
+            <th>NIT</th>
+            <th>EMAIL</th>
+            <th>TELEFONO</th>
+            <th>PATENTE</th>
+            <th>Tipo de Cliente</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for repuesto in repuestos %}
+            <tr>
+                <td>{{repuesto.Codigo_Repuesto}}</td>
+                <td>{{repuesto.Modelo_De_Parte}}</td>
+                <td>{{repuesto.Nombre}}</td>
+                <td>{{repuesto.Descripcion}}</td>
+                <td>{{repuesto.Vehiculo_Compatible}}</td>                
+                <td>{{repuesto.Stock}}</td>
+                <td>{{repuesto.Fabrica}}</td>
+                <td>{{repuesto.Precio_Fabricante}}</td>
+                <td>{{repuesto.Precio_Venta}}</td>
+                <td>
+                    <a  href="{{repuesto.Codigo_Repuesto}}/updatecl" class="btn btn-warning">Editar</a>
+                    <a  href="{{repuesto.Codigo_Repuesto}}/deletecl" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+{% endblock %}

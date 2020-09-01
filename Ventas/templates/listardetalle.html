@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body>
+    <div class="page-header">
+    <a href="{% url 'newcliente' %}" class="top-menu">Nuevo<span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+
+<table class="table">
+        <thead>
+        <tr>
+            <th>Subtotal</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for detalle in detalles %}
+            <tr>
+                <td>{{detalle.valor_subtotal}}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+{% endblock %}

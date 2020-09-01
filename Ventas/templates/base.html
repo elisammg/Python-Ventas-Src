@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Ventas</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    <body>
+
+<div class="container">
+        <h1>Tienda MC</a></h1>
+        <h2>Ventas</h2>
+                <a href="{% url 'salir' %}">Cerrar Sesion</a>
+                <hr>
+    <a  href="{% url 'newuser' %}" class="btn btn-primary">Agregar Usuarios</span></a>    
+    <hr>
+    <a class="btn btn-info">Repuestos</span></a> 
+    <a class="btn btn-info">Clientes</span></a>  
+    <a class="btn btn-info">Ventas</span></a> 
+    <a class="btn btn-info">Fabricas</span></a> 
+        <br>
+    </div>
+    <div class="container mt-4">
+            {% block content %}
+            {% endblock %}
+    </div>
+    </body>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+<hr>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+    <p>Elisa Monzon</p>
+    
+    © 2020 Copyright: <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>   
+    
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</html>

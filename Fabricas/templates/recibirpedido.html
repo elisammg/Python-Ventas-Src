@@ -1,0 +1,40 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+
+    <h3>Envios de Fabrica</h3>
+<table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Fecha recibido</th>
+            <th>Fecha entrega</th>
+            <th>Estado</th>
+            <th>Repuestos</th>
+            <th>Clientes</th>
+            <th>Precio Final</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            {% for ListaPedido in ListaPedidos %}
+                {% for apipedido in ListaPedido %}
+            <tr>
+                <td>{{apipedido.id}}</td>
+                <td>{{apipedido.fecha_recibido}}</td>
+                <td>{{apipedido.fecha_entrega}}</td>
+                <td>{{apipedido.estado}}</td>
+                <td>{{apipedido.repuestos}}</td>
+                <td>{{apipedido.clientes}}</td>
+                <td>{{apipedido.precio_final}}</td>
+                <td>{{apipedido.cantidad}}</td>                
+                <td><a  href="listado/{{apipedido.id}}/agregar" class="btn btn-success">Agregar</a></td>
+            </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+        
+</table>
+{% endblock %}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <title>Ventas</title>
+    
+</head>
+<body>
+    <div class="content">
+        <div class="row">       	
+            <div class="col-md-6">  
+        <h1>Venta Individual</h1>           	
+                <div class="panel panel-rd">
+                    <div class="panel-heading bgc-outer-space">
+                        <h2 class="mg-clear text-center tc-electric-green">
+                           Agregar productos
+                        </h2>
+                    </div>
+                
+                    <form action="" method="POST" novalidate success-msg="Guardado con exito" fail-msg="No se pudo guardar" class="text-center">
+                        
+                            {% csrf_token %} 
+                            {{ findividual.as_p }}
+
+                            <div class="panel-footer">
+                                    <button class="btn btn-primary btn-lg btn-block" type="submit" name="btnVentaI">
+                                        Agregar
+                                    </button>
+                            </div>
+                    </form>
+                </div>
+                <div class="panel panel-rd">
+                    <div class="panel-heading bgc-outer-space">
+                        <h2 class="mg-clear text-center tc-electric-green">
+                           Agregar Datos Cliente
+                        </h2>
+                    </div>
+                
+                    <form action="" method="POST" novalidate success-msg="Guardado con exito" fail-msg="No se pudo guardar" class="text-center">
+                        
+                            {% csrf_token %} 
+                            {{ facturaI.as_p }}
+
+                            <div class="panel-footer">
+                                    <button class="btn btn-warning btn-lg btn-block" type="submit" name="btnFI">
+                                        Facturar
+                                    </button>
+                            </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-rd">
+                    <div class="panel-heading bgc-outer-space">
+                        <h2 class="mg-clear text-center tc-electric-green">
+                           Subtotales
+                        </h2>
+                    </div>
+                
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Venta</th> 
+                            <th>Cantidad</th>
+                            <th>Repuesto</th>                           
+                            <th>Subtotal</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for list in lista %}
+                            <tr>
+                                <td>{{list.Codigo}}</td>
+                                <td>{{list.Venta}}</td>
+                                <td>{{list.Cantidad}}</td>
+                                <td>{{list.Repuesto}}</td>                                 
+                                <td>{{list.Sub_Total}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+               		</table>
+                </div> 
+
+                <div class="panel panel-rd">
+                    <div class="panel-heading bgc-outer-space">
+                        <h2 class="mg-clear text-center tc-electric-green">
+                           Total Factura
+                        </h2>
+                    </div>
+                
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Numero Factura</th>
+                            <th>Estado</th> 
+                            <th>Venta</th>
+                            <th>Nombre Cliente</th>                           
+                            <th>Nit</th>                           
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for factura in facturas %}
+                            <tr>
+                                <td>{{factura.Numero_Factura}}</td>
+                                <td>{{factura.Estado}}</td>
+                                <td>{{factura.Venta}}</td>
+                                <td>{{factura.Nombre_cliente}}</td>                                 
+                                <td>{{factura.Nit}}</td>                                                                 
+                                <td>{{factura.Total}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+               		</table>
+                </div> 
+
+                
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Clientes</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    <body>
+        
+<div class="container">
+<h1>Tienda MC</a></h1>
+        <h2>Clientes</h2>
+        <a href="/logout">Cerrar sesión</a>
+    <hr>
+    <a href="{% url 'listaclientes' %}" class="btn btn-primary">Productos</span></a>
+    <a href="{% url 'listaclientes' %}" class="btn btn-primary">Clientes</span></a>
+    <a href="{% url 'listafabricas' %}" class="btn btn-primary">Fabricas</span></a>    
+    <a href="{% url 'listaclientes' %}" class="btn btn-primary">Ventas</span></a>
+||
+    <a href="{% url 'listafabricas' %}" class="btn btn-info">Fabricas</span></a>
+    </div>
+    <div class="container mt-4">
+            {% block content %}
+            {% endblock %}
+    </div>
+    </body>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+<hr>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">
+    <p>Elisa Monzon</p>
+    © 2020 Copyright: <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>   
+    
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+</html>

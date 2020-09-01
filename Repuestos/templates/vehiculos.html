@@ -1,0 +1,36 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<body>
+    <div class="page-header">
+    <a href="{% url 'newcliente' %}" class="top-menu">Nuevo<span class="glyphicon glyphicon-plus"></span></a>
+    </div>
+
+<table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marca</th>
+            <th>Linea</th>
+            <th>Anio</th>
+            <th>Codigo Universal</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for vehiculo in vehiculos %}
+            <tr>
+                <td>{{vehiculo.id_Vehiculo}}</td>
+                <td>{{vehiculo.Marca}}</td>
+                <td>{{vehiculo.Linea}}</td>
+                <td>{{vehiculo.Anio}}</td>
+                <td>{{vehiculo.Codigo_Universal}}</td>
+                <td>
+                    <a  href="{{repuesto.id_Vehiculo}}/updatecl" class="btn btn-warning">Editar</a>
+                    <a  href="{{repuesto.id_Vehiculo}}/deletecl" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+{% endblock %}
